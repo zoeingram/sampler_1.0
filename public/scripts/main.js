@@ -1,3 +1,8 @@
 $(document).ready(function() {
-  console.log("ready");
+  var images = 10;
+
+  for(var i = 0; i < images; i++) {
+    // $('.main-body').addChild
+  }
+
 })

@@ -26,12 +26,14 @@
 }
 
 .box-top {
-    margin-left: 166px;
+    margin-left: 170px;
+    margin-bottom: 12px;
 }
 
 .box-bottom {
-    margin-right: 166px;
+    margin-right: 173px;
     margin-bottom: 75px;
+    margin-top: 12px;
 }
 
 .timeline {

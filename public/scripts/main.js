@@ -1,13 +1,13 @@
 $(document).ready(function() {
-  function setup() {
-    createCanvas(640, 480);
+  var boxes = document.getElementsByClassName('box');
+  var currentNode;
 
-  }
+  $(document).click(function(event) {
+      currentNode = $(event.target);
+      console.log(currentNode);
+  });
 
-  function draw() {
-    fill(255, 0, 0);
-    ellipse(50, 50, 80, 80);
-  }
-  console.log("does this work")
+
+
 
 }); // End document ready

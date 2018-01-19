@@ -20,10 +20,17 @@
 }
 
 .box {
-  height: 100px;
-  width: 75px;
+  height: 200px;
+  width: 155px;
   border: 1px solid red;
   display: inline-block;
+}
+.box-top {
+  margin-left: 166px;
+}
+.box-bottom {
+  margin-right: 166px;
+  margin-bottom: 75px;
 }
 
 .timeline {

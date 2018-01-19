@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $(document).click(function(event) {
       currentNode = $(event.target);
-      console.log(currentNode);
+      console.log(currentNode.css('background-image'));
   });
 
 

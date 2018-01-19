@@ -1,8 +1,13 @@
 $(document).ready(function() {
-  var images = 10;
+  function setup() {
+    createCanvas(640, 480);
 
-  for(var i = 0; i < images; i++) {
-    // $('.main-body').addChild
   }
 
-})
+  function draw() {
+    fill(255, 0, 0);
+    ellipse(50, 50, 80, 80);
+  }
+  console.log("does this work")
+
+}); // End document ready

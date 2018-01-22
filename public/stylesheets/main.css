@@ -8,10 +8,9 @@
     font-family: 'importedFont';
 }
 
-#scrollBar {
-    height: 90vh;
+#sidebar {
     position: fixed;
-    right: 0;
+    right: 10%;
 }
 
 .container {

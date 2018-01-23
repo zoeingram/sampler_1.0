@@ -10,7 +10,14 @@
 
 #sidebar {
     position: fixed;
-    right: 10%;
+    right: 0;
+    width: 15%;
+    text-align: center;
+}
+
+.side {
+  margin-right: 25px;
+  margin-left: 0;
 }
 
 .container {

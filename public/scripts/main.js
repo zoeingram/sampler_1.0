@@ -12,7 +12,7 @@ function draw() {
   canWidth = canvas.width;
 
 
-  rect(2, 40, canWidth -5, canvas.height -5);
+  rect(2, 30, canWidth -5, canvas.height -70);
 }
 
 $(document).ready(function() {

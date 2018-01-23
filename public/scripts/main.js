@@ -15,7 +15,7 @@ function draw() {
 
 function determineLane(node) {
   findImageByClick(node);
-  
+
   var nodeValue =  node.context.innerHTML;
   if (nodeValue === '1') {
     console.log("hits 1");
@@ -29,8 +29,10 @@ function determineLane(node) {
 }
 
 function findImageByClick(node) {
-  var imageURL = node.parent().css('background-image');
-  console.log(imageURL, "url");
+  var imageURL = node.parent().css('background-image'); //(https?:\/\/.*\.(?:png))
+  var imgRegEx =/(https?:\/\/.*\.(?:png))/i;
+  var result = imgRegEx.exec(imageURL)[0];
+  console.log(result, "RES");
 }
 
 

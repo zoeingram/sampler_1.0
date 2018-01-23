@@ -14,26 +14,34 @@ function draw() {
 }
 
 function determineLane(node) {
-  findImageByClick(node);
-
   var nodeValue =  node.context.innerHTML;
-  if (nodeValue === '1') {
-    console.log("hits 1");
-  } else if (nodeValue === '2') {
-    console.log("hits 2");
-  } else if (nodeValue === '3'){
-    console.log("hits 3");
-  } else {
-    console.log("did not hit value");
+
+  if (nodeValue.length < 2 ) { // Only call functions if button is hit
+    findImageURL(node);
+    if (nodeValue === '1') {
+      console.log("hits 1");
+    } else if (nodeValue === '2') {
+      console.log("hits 2");
+    } else if (nodeValue === '3'){
+      console.log("hits 3");
+    } else {
+      console.log("did not hit value");
+    }
   }
 }
 
-function findImageByClick(node) {
-  var imageURL = node.parent().css('background-image'); //(https?:\/\/.*\.(?:png))
+function findImageURL(node) {
+  var imageURL = node.parent().css('background-image');
   var imgRegEx =/(https?:\/\/.*\.(?:png))/i;
   var result = imgRegEx.exec(imageURL)[0];
-  console.log(result, "RES");
+  return result;
 }
+
+function passImage(result) {
+  //
+}
+
+
 
 
 

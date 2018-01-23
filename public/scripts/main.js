@@ -1,4 +1,5 @@
 var canvas;
+var canWidth;
 
 function setup() {
   canvas = createCanvas(windowWidth/7, windowHeight);
@@ -8,10 +9,12 @@ function setup() {
 
 function draw() {
   strokeWeight(2);
-  rect(2, 2, canvas.width -5, canvas.height -5);
+  canWidth = canvas.width;
 
 
+  rect(2, 40, canWidth -5, canvas.height -5);
 }
+
 $(document).ready(function() {
   var boxes = document.getElementsByClassName('box');
   var currentNode;

@@ -1,3 +1,12 @@
+// TODO: render images in canvas
+// TODO: add sounds to each ID
+// TODO: looping functionality
+// TODO: recording functionality
+// TODO: make images move through lanes * speed
+// TODO: download song after recording has ended
+// TODO: START / STOP
+
+
 var canvas;
 var canWidth;
 
@@ -34,7 +43,6 @@ function findImageURL(node) {
     var imageURL = node.parent().css('background-image');
     var imgRegEx = /(https?:\/\/.*\.(?:png))/i;
     var result = imgRegEx.exec(imageURL)[0];
-
     passImage(result);
 }
 

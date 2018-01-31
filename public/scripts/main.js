@@ -9,6 +9,7 @@
 
 var canvas;
 var canWidth;
+var img;
 
 function setup() {
     canvas = createCanvas(windowWidth / 7, windowHeight);
@@ -20,6 +21,7 @@ function draw() {
     strokeWeight(2);
     canWidth = canvas.width;
     rect(2, 30, canWidth - 5, canvas.height - 70);
+    putImageInLane(img);
 }
 
 function determineLane(node) {
@@ -42,20 +44,22 @@ function determineLane(node) {
 function findImageURL(node) {
     var imageURL = node.parent().css('background-image');
     var imgRegEx = /(https?:\/\/.*\.(?:png))/i;
+    var remove = "http://localhost:5000"; // Replace with static image URL when deployed
     var result = imgRegEx.exec(imageURL)[0];
+    result = result.replace(remove, '');
     passImage(result);
 }
 
 
 
 function passImage(result) {
-  var img = loadImage(result);
-  putImageInLane(img);
+  img = loadImage(result);
+  // putImageInLane(img);
 }
 
 function putImageInLane(img) {
-  image(img, 0, 0, img.width/2, img.height/2);
   console.log(img)
+  image(img, 0, 0, img.width/2, img.height/2);
 }
 
 

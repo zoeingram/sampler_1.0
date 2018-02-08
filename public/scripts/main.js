@@ -10,6 +10,13 @@
 var canvas;
 var canWidth;
 var img;
+var x1 = 0;
+var y1 = 0;
+var x2 = 0;
+var y2 = 0;
+var x3 = 0;
+var y3 = 0;
+var currentImg;
 
 function setup() {
     canvas = createCanvas(windowWidth / 7, windowHeight);
@@ -20,17 +27,21 @@ function setup() {
 function draw() {
     strokeWeight(2);
     canWidth = canvas.width;
+    noFill();
     rect(2, 30, canWidth - 5, canvas.height - 70);
-    putImageInLane(img);
+
+    if(currentImg) {
+      putImageInLane(currentImg);
+    }
+
 }
 
 function determineLane(node) {
     var nodeValue = node.context.innerHTML;
-
     if (nodeValue.length < 2) { // Only call functions if button is hit
         findImageURL(node);
         if (nodeValue === '1') { // DO sound stuff here
-            console.log("hits 1");
+            x = 0, y = 0;
         } else if (nodeValue === '2') { // DO sound stuff here
             console.log("hits 2");
         } else if (nodeValue === '3') { // DO sound stuff here
@@ -53,13 +64,18 @@ function findImageURL(node) {
 
 
 function passImage(result) {
-  img = loadImage(result);
-  // putImageInLane(img);
+  currentImg = loadImage(result);
+
 }
 
-function putImageInLane(img) {
-  console.log(img)
-  image(img, 0, 0, img.width/2, img.height/2);
+function putImageInLane(currentImg) {
+  image(currentImg, x, y, currentImg.width/20, currentImg.height/20);
+  console.log(currentImg);
+}
+
+function iteratePosition() {
+  x +=10;
+  y +=10;
 }
 
 
@@ -72,6 +88,7 @@ $(document).ready(function() {
         currentNode = $(event.target);
         determineLane(currentNode);
         currentNode.blur();
+        iteratePosition();
     });
 
 }); // End document ready

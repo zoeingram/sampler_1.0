@@ -26,7 +26,7 @@ function draw() {
     strokeWeight(2);
     canWidth = canvas.width;
     noFill();
-    rect(2, 30, canWidth - 5, canvas.height - 70);
+    rect(2, 30, canWidth - 5, canvas.height );
     if(currentImg) {
       putImageInLane1(currentImg);
     }
